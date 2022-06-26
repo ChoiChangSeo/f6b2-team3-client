@@ -2,13 +2,14 @@ import { yupResolver } from "@hookform/resolvers/yup";
 import { useForm } from "react-hook-form";
 import LoginUI from "./LoginPresenter";
 import * as yup from "yup";
-import { useMutation } from "@apollo/client";
+import { useMutation} from "@apollo/client";
 import { useRecoilState } from "recoil";
-import { accessTokenState } from "../../../commons/store";
+import { accessTokenState} from "../../../commons/store";
 import { useRouter } from "next/router";
 import { useMoveToPage } from "../../../components/commons/hooks/useMoveToPage";
 import { IFormValuesLogin } from "./LoginTypes";
 import { LOGIN } from "./LoginQueries";
+import { Modal } from "antd";
 
 const schema = yup.object({
   email: yup
@@ -35,12 +36,16 @@ export default function Login() {
   });
 
   const onClickLogin = async (data: IFormValuesLogin) => {
+    try{
     const result = await login({
       variables: { ...data },
     });
     const accessToken = result.data.login;
     setAccessToken(accessToken);
     router.push("/boards");
+    }catch(error){
+     if(error instanceof Error) Modal.error({content:error.message})
+    }
   };
 
 

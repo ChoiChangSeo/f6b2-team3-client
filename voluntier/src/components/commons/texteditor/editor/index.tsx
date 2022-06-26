@@ -39,7 +39,6 @@ const UPLOAD_IMAGE = gql`
 
 export default function EditorUI(props: any) {
   const [uploadImage] = useMutation(UPLOAD_IMAGE);
-  console.log(props.defaultData)
   
   return (
     <Wrapper>

@@ -4,7 +4,6 @@ import ProductDetailUI from "./ProductDetailPresenter";
 import { useRouter } from "next/router";
 import { Modal } from "antd";
 import { DELETE_PRODUCT, FETCH_PRODUCT } from "./ProductDetailQueries";
-
 import { IQuery } from "../../../../commons/types/generated/types";
 
 const CREATE_DIBS = gql`
