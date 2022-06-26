@@ -18,7 +18,7 @@ export default function BoardDetailUI(props: IPropsBoardDetailUI) {
   useEffect(() => {
     if (props.data?.fetchBoard?.user.id !== props.userData?.fetchLoginUser.id)
       setWhois(1);
-    if (props.data?.fetchBoard?.user.id === props.userData?.fetchLoginUser.id && props.userData?.fetchLoginUser?.isAdmin)
+    if (props.data?.fetchBoard?.user.id === props.userData?.fetchLoginUser.id || props.userData?.fetchLoginUser?.isAdmin)
       setWhois(2);
     if (props.userData?.fetchLoginUser?.isAdmin) setWhois(3);
   }, [props.data, props.userData]);
