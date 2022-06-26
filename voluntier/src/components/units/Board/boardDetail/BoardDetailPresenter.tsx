@@ -18,7 +18,7 @@ export default function BoardDetailUI(props: IPropsBoardDetailUI) {
   useEffect(() => {
     if (props.data?.fetchBoard?.user.id !== props.userData?.fetchLoginUser.id)
       setWhois(1);
-    if (props.data?.fetchBoard?.user.id === props.userData?.fetchLoginUser.id || props.userData?.fetchLoginUser?.isAdmin)
+    if (props.data?.fetchBoard?.user.id === props.userData?.fetchLoginUser.id)
       setWhois(2);
     if (props.userData?.fetchLoginUser?.isAdmin) setWhois(3);
   }, [props.data, props.userData]);
@@ -144,7 +144,10 @@ export default function BoardDetailUI(props: IPropsBoardDetailUI) {
                 </>
               )}
               {whois === 3 && (
-                <S.Button onClick={props.DeleteBoard}>삭제하기</S.Button>
+                <>
+                  <S.Button onClick={props.onClickEdit}>수정하기</S.Button>
+                  <S.Button onClick={props.DeleteBoard}>삭제하기</S.Button>
+                </>
               )}
             </S.ButtonWrapper>
           </S.InnerWrapperLeft>
