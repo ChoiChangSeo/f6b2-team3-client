@@ -167,7 +167,7 @@ export default function DonationUI(props: IDonationUIProps) {
                 backgroundImage: `url("../../../../images/donation/고양이발(치즈).png")`,
               }}
             >
-              <S.PriceDetail id={String(10000)}>1만젤리 후원하기</S.PriceDetail>
+              <S.PriceDetail>1만젤리 후원하기</S.PriceDetail>
             </S.Price>
           </S.Pricediv>
           <S.Pricediv>
@@ -178,7 +178,7 @@ export default function DonationUI(props: IDonationUIProps) {
                 backgroundImage: `url("../../../../images/donation/고양이발(호랭이).png")`,
               }}
             >
-              <S.PriceDetail id={String(20000)}>2만젤리 후원하기</S.PriceDetail>
+              <S.PriceDetail>2만젤리 후원하기</S.PriceDetail>
             </S.Price>
           </S.Pricediv>
           <S.Pricediv>
@@ -189,7 +189,7 @@ export default function DonationUI(props: IDonationUIProps) {
                 backgroundImage: `url("../../../../images/donation/고양이발(회색).png")`,
               }}
             >
-              <S.PriceDetail id={String(30000)}>3만젤리 후원하기</S.PriceDetail>
+              <S.PriceDetail>3만젤리 후원하기</S.PriceDetail>
             </S.Price>
           </S.Pricediv>
 
